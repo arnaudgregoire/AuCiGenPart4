@@ -1,0 +1,79 @@
+\hypertarget{test_8h}{}\section{include/test.h File Reference}
+\label{test_8h}\index{include/test.\+h@{include/test.\+h}}
+{\ttfamily \#include \char`\"{}ogrsf\+\_\+frmts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Vecteur.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{test_8h_a5a77548056d908ae100532af0b813581}{test\+\_\+lecture}} (int num)
+\item 
+void \mbox{\hyperlink{test_8h_a761f9f9e73d0c1ab3cf9ddbb8def52be}{test\+\_\+\+O\+BB}} (char $\ast$export\+\_\+polygon)
+\item 
+void \mbox{\hyperlink{test_8h_ad85d5cd31d7a5bf38d0d04ba6be2df81}{test\+\_\+ecriture}} (char $\ast$export\+\_\+polygon, char $\ast$nom\+\_\+couche, int seuil)
+\item 
+void \mbox{\hyperlink{test_8h_a5f44da3e0ad14791515bd090c56ed0c8}{ecriture}} (std\+::vector$<$ char $\ast$$>$ tab\+\_\+export\+\_\+poly, const char $\ast$nom\+\_\+couche, int seuil)
+\begin{DoxyCompactList}\small\item\em Split all polygons with the O\+BB method if they have an area taller than the given threshold and write them in the given shapefile name. \end{DoxyCompactList}\item 
+std\+::vector$<$ char $\ast$ $>$ \mbox{\hyperlink{test_8h_ac45b732bb0f94b0e22594f4205321f6e}{lecture}} (const char $\ast$nom\+\_\+couche, const char $\ast$nom\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em Read all features of the given layer in the given shapefile and stock them into a vector of char$\ast$ Well-\/\+Known-\/\+Text format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{test_8h_a5f44da3e0ad14791515bd090c56ed0c8}\label{test_8h_a5f44da3e0ad14791515bd090c56ed0c8}} 
+\index{test.\+h@{test.\+h}!ecriture@{ecriture}}
+\index{ecriture@{ecriture}!test.\+h@{test.\+h}}
+\subsubsection{\texorpdfstring{ecriture()}{ecriture()}}
+{\footnotesize\ttfamily void ecriture (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $\ast$$>$}]{tab\+\_\+export\+\_\+poly,  }\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{int}]{seuil }\end{DoxyParamCaption})}
+
+
+
+Split all polygons with the O\+BB method if they have an area taller than the given threshold and write them in the given shapefile name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::vector$<$char$\ast$$>$} & tab\+\_\+export\+\_\+poly a vector of polygon in the W\+KT format \\
+\hline
+{\em const} & char$\ast$ nom\+\_\+couche The name of the shapefile where you want the data to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int seuil the treshold area that determine if each polygon will be splitted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8h_ac45b732bb0f94b0e22594f4205321f6e}\label{test_8h_ac45b732bb0f94b0e22594f4205321f6e}} 
+\index{test.\+h@{test.\+h}!lecture@{lecture}}
+\index{lecture@{lecture}!test.\+h@{test.\+h}}
+\subsubsection{\texorpdfstring{lecture()}{lecture()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $\ast$ $>$ lecture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{const char $\ast$}]{nom\+\_\+layer }\end{DoxyParamCaption})}
+
+
+
+Read all features of the given layer in the given shapefile and stock them into a vector of char$\ast$ Well-\/\+Known-\/\+Text format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char$\ast$ nom\+\_\+couche The name of the Shapefile where the data will be read \\
+\hline
+{\em const} & char$\ast$ nom\+\_\+layer The name of the layer where the data will be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$char$\ast$$>$ a vector of char$\ast$ containing the exported polygons in W\+KT format 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8h_ad85d5cd31d7a5bf38d0d04ba6be2df81}\label{test_8h_ad85d5cd31d7a5bf38d0d04ba6be2df81}} 
+\index{test.\+h@{test.\+h}!test\+\_\+ecriture@{test\+\_\+ecriture}}
+\index{test\+\_\+ecriture@{test\+\_\+ecriture}!test.\+h@{test.\+h}}
+\subsubsection{\texorpdfstring{test\+\_\+ecriture()}{test\_ecriture()}}
+{\footnotesize\ttfamily void test\+\_\+ecriture (\begin{DoxyParamCaption}\item[{char $\ast$}]{export\+\_\+polygon,  }\item[{char $\ast$}]{nom\+\_\+couche,  }\item[{int}]{seuil }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test_8h_a5a77548056d908ae100532af0b813581}\label{test_8h_a5a77548056d908ae100532af0b813581}} 
+\index{test.\+h@{test.\+h}!test\+\_\+lecture@{test\+\_\+lecture}}
+\index{test\+\_\+lecture@{test\+\_\+lecture}!test.\+h@{test.\+h}}
+\subsubsection{\texorpdfstring{test\+\_\+lecture()}{test\_lecture()}}
+{\footnotesize\ttfamily char$\ast$ test\+\_\+lecture (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test_8h_a761f9f9e73d0c1ab3cf9ddbb8def52be}\label{test_8h_a761f9f9e73d0c1ab3cf9ddbb8def52be}} 
+\index{test.\+h@{test.\+h}!test\+\_\+\+O\+BB@{test\+\_\+\+O\+BB}}
+\index{test\+\_\+\+O\+BB@{test\+\_\+\+O\+BB}!test.\+h@{test.\+h}}
+\subsubsection{\texorpdfstring{test\+\_\+\+O\+B\+B()}{test\_OBB()}}
+{\footnotesize\ttfamily void test\+\_\+\+O\+BB (\begin{DoxyParamCaption}\item[{char $\ast$}]{export\+\_\+polygon }\end{DoxyParamCaption})}
+

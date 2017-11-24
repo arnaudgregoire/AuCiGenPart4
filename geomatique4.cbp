@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="geomatique4" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/geomatique4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="/usr/include/gdal/" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/geomatique4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="../../../../usr/include/gdal/cpl_atomic_ops.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_aws.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_config.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_config_extras.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_conv.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_csv.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_error.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_hash_set.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_http.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_list.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_minixml.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_minizip_ioapi.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_minizip_unzip.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_minizip_zip.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_multiproc.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_odbc.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_port.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_progress.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_quad_tree.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_sha256.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_spawn.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_string.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_time.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_virtualmem.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_vsi.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_vsi_error.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_vsi_virtual.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_vsil_curl_priv.h" />
+		<Unit filename="../../../../usr/include/gdal/cpl_worker_thread_pool.h" />
+		<Unit filename="../../../../usr/include/gdal/cplkeywordparser.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_alg.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_alg_priv.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_csv.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_frmts.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_mdreader.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_pam.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_priv.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_proxy.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_rat.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_simplesurf.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_utils.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_version.h" />
+		<Unit filename="../../../../usr/include/gdal/gdal_vrt.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalexif.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalgeorefpamdataset.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalgrid.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalgrid_priv.h" />
+		<Unit filename="../../../../usr/include/gdal/gdaljp2abstractdataset.h" />
+		<Unit filename="../../../../usr/include/gdal/gdaljp2metadata.h" />
+		<Unit filename="../../../../usr/include/gdal/gdaljp2metadatagenerator.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalpansharpen.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalsse_priv.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalwarper.h" />
+		<Unit filename="../../../../usr/include/gdal/gdalwarpkernel_opencl.h" />
+		<Unit filename="../../../../usr/include/gdal/gvgcpfit.h" />
+		<Unit filename="../../../../usr/include/gdal/internal_qhull_headers.h" />
+		<Unit filename="../../../../usr/include/gdal/memdataset.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_api.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_core.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_feature.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_featurestyle.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_geocoding.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_geometry.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_p.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_spatialref.h" />
+		<Unit filename="../../../../usr/include/gdal/ogr_srs_api.h" />
+		<Unit filename="../../../../usr/include/gdal/ogrsf_frmts.h" />
+		<Unit filename="../../../../usr/include/gdal/rawdataset.h" />
+		<Unit filename="../../../../usr/include/gdal/thinplatespline.h" />
+		<Unit filename="../../../../usr/include/gdal/vrtdataset.h" />
+		<Unit filename="include/Vecteur.h" />
+		<Unit filename="include/decoupage.h" />
+		<Unit filename="include/obb.h" />
+		<Unit filename="include/test.h" />
+		<Unit filename="include/transition.h" />
+		<Unit filename="src/Vecteur.cpp" />
+		<Unit filename="src/decoupage.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/obb.cpp" />
+		<Unit filename="src/test.cpp" />
+		<Unit filename="src/transition.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

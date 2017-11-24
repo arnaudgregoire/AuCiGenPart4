@@ -1,0 +1,112 @@
+\hypertarget{obb_8cpp}{}\section{src/obb.cpp File Reference}
+\label{obb_8cpp}\index{src/obb.\+cpp@{src/obb.\+cpp}}
+{\ttfamily \#include \char`\"{}Vecteur.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ogrsf\+\_\+frmts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}decoupage.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+O\+G\+R\+Line\+String $\ast$ \mbox{\hyperlink{obb_8cpp_a136b21bd040a1f917974e94d52cb834b}{prepare\+\_\+obb}} (O\+G\+R\+Polygon $\ast$poly\+\_\+prep)
+\begin{DoxyCompactList}\small\item\em Transform the given O\+G\+R\+Polygon$\ast$ into a O\+G\+R\+Line\+String$\ast$ with points in counter clockwise order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVecteur}{Vecteur}} \mbox{\hyperlink{obb_8cpp_a989c96ec1262fd4901b3daa105b2ba67}{Intersect\+Lines}} (\mbox{\hyperlink{classVecteur}{Vecteur}} start0, \mbox{\hyperlink{classVecteur}{Vecteur}} dir0, \mbox{\hyperlink{classVecteur}{Vecteur}} start1, \mbox{\hyperlink{classVecteur}{Vecteur}} dir1)
+\begin{DoxyCompactList}\small\item\em Compute the intersection between one point and a direction (start0,dir0) with one other point and one other direction (start1, dir1) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{obb_8cpp_a0f0649d4ebc80a60cda6f1bef49e00ce}{sortx}} (\mbox{\hyperlink{classVecteur}{Vecteur}} a, \mbox{\hyperlink{classVecteur}{Vecteur}} b)
+\begin{DoxyCompactList}\small\item\em Ascending Sorting method for \char`\"{}\+Vecteur\char`\"{} type along the x attribute. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVecteur}{Vecteur}} $>$ \mbox{\hyperlink{obb_8cpp_aff3cc93e6df3de42b1726d6a2db22fb4}{order}} (std\+::vector$<$ \mbox{\hyperlink{classVecteur}{Vecteur}} $>$ obb)
+\begin{DoxyCompactList}\small\item\em Order obb points in order to have always extrem points in following order\+: obb\+Upper\+Left, obb\+Bottom\+Left, obb\+Bottom\+Right, obb\+Upper\+Right. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVecteur}{Vecteur}} $>$ \mbox{\hyperlink{obb_8cpp_abf79771a901742bf38b0e90c81e89a9f}{Calc\+Ombb}} (O\+G\+R\+Line\+String $\ast$convex\+Hull)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{obb_8cpp_abf79771a901742bf38b0e90c81e89a9f}\label{obb_8cpp_abf79771a901742bf38b0e90c81e89a9f}} 
+\index{obb.\+cpp@{obb.\+cpp}!Calc\+Ombb@{Calc\+Ombb}}
+\index{Calc\+Ombb@{Calc\+Ombb}!obb.\+cpp@{obb.\+cpp}}
+\subsubsection{\texorpdfstring{Calc\+Ombb()}{CalcOmbb()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVecteur}{Vecteur}}$>$ Calc\+Ombb (\begin{DoxyParamCaption}\item[{O\+G\+R\+Line\+String $\ast$}]{convex\+Hull }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{obb_8cpp_a989c96ec1262fd4901b3daa105b2ba67}\label{obb_8cpp_a989c96ec1262fd4901b3daa105b2ba67}} 
+\index{obb.\+cpp@{obb.\+cpp}!Intersect\+Lines@{Intersect\+Lines}}
+\index{Intersect\+Lines@{Intersect\+Lines}!obb.\+cpp@{obb.\+cpp}}
+\subsubsection{\texorpdfstring{Intersect\+Lines()}{IntersectLines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVecteur}{Vecteur}} Intersect\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVecteur}{Vecteur}}}]{start0,  }\item[{\mbox{\hyperlink{classVecteur}{Vecteur}}}]{dir0,  }\item[{\mbox{\hyperlink{classVecteur}{Vecteur}}}]{start1,  }\item[{\mbox{\hyperlink{classVecteur}{Vecteur}}}]{dir1 }\end{DoxyParamCaption})}
+
+
+
+Compute the intersection between one point and a direction (start0,dir0) with one other point and one other direction (start1, dir1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classVecteur}{Vecteur}}} & start0 The first point coordinate \\
+\hline
+{\em \mbox{\hyperlink{classVecteur}{Vecteur}}} & dir0 The first direction vector coordinate \\
+\hline
+{\em \mbox{\hyperlink{classVecteur}{Vecteur}}} & start1 The second point coordinate \\
+\hline
+{\em \mbox{\hyperlink{classVecteur}{Vecteur}}} & dir1 The second direction vector coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVecteur}{Vecteur}} Point Coordinate of computed intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{obb_8cpp_aff3cc93e6df3de42b1726d6a2db22fb4}\label{obb_8cpp_aff3cc93e6df3de42b1726d6a2db22fb4}} 
+\index{obb.\+cpp@{obb.\+cpp}!order@{order}}
+\index{order@{order}!obb.\+cpp@{obb.\+cpp}}
+\subsubsection{\texorpdfstring{order()}{order()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVecteur}{Vecteur}}$>$ order (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classVecteur}{Vecteur}} $>$}]{obb }\end{DoxyParamCaption})}
+
+
+
+Order obb points in order to have always extrem points in following order\+: obb\+Upper\+Left, obb\+Bottom\+Left, obb\+Bottom\+Right, obb\+Upper\+Right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::vector$<$\+Vecteur$>$} & the 4 points representation of oriented bounding box \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Vecteur$>$ the 4 points sorted in order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{obb_8cpp_a136b21bd040a1f917974e94d52cb834b}\label{obb_8cpp_a136b21bd040a1f917974e94d52cb834b}} 
+\index{obb.\+cpp@{obb.\+cpp}!prepare\+\_\+obb@{prepare\+\_\+obb}}
+\index{prepare\+\_\+obb@{prepare\+\_\+obb}!obb.\+cpp@{obb.\+cpp}}
+\subsubsection{\texorpdfstring{prepare\+\_\+obb()}{prepare\_obb()}}
+{\footnotesize\ttfamily O\+G\+R\+Line\+String$\ast$ prepare\+\_\+obb (\begin{DoxyParamCaption}\item[{O\+G\+R\+Polygon $\ast$}]{poly\+\_\+prep }\end{DoxyParamCaption})}
+
+
+
+Transform the given O\+G\+R\+Polygon$\ast$ into a O\+G\+R\+Line\+String$\ast$ with points in counter clockwise order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O\+G\+R\+Polygon$\ast$} & polygon you want to transform \\
+\hline
+{\em O\+G\+R\+Layer} & $\ast$layer\+\_\+w layer where you want to write polygons\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O\+G\+R\+Line\+String$\ast$ The Line\+String in counterclockwise order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{obb_8cpp_a0f0649d4ebc80a60cda6f1bef49e00ce}\label{obb_8cpp_a0f0649d4ebc80a60cda6f1bef49e00ce}} 
+\index{obb.\+cpp@{obb.\+cpp}!sortx@{sortx}}
+\index{sortx@{sortx}!obb.\+cpp@{obb.\+cpp}}
+\subsubsection{\texorpdfstring{sortx()}{sortx()}}
+{\footnotesize\ttfamily bool sortx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVecteur}{Vecteur}}}]{a,  }\item[{\mbox{\hyperlink{classVecteur}{Vecteur}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Ascending Sorting method for \char`\"{}\+Vecteur\char`\"{} type along the x attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classVecteur}{Vecteur}}} & a \\
+\hline
+{\em \mbox{\hyperlink{classVecteur}{Vecteur}}} & b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool a boolean that is true if a.\+x$<$b.\+x, else otherwise 
+\end{DoxyReturn}

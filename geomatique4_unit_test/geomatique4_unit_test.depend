@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1510243077 source:/home/formation/Bureau/AuCiGen/geomatique4/src/obb.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"decoupage.h"
+	<algorithm>
+
+1510325890 source:/home/formation/Bureau/AuCiGen/geomatique4/src/Vecteur.cpp
+	"Vecteur.h"
+	<cmath>
+
+1510583298 source:/home/formation/Bureau/AuCiGen/geomatique4/geomatique4_unit_test/src/main.cpp
+	"catch.hpp"
+
+1510583445 source:/home/formation/Bureau/AuCiGen/geomatique4/geomatique4_unit_test/src/unit_test.cpp
+	"../../include/Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"../../include/obb.h"
+	"catch.hpp"
+
+1510325886 /home/formation/Bureau/AuCiGen/geomatique4/include/Vecteur.h
+
+1510240133 /home/formation/Bureau/AuCiGen/geomatique4/include/obb.h
+	"Vecteur.h"
+	<vector>
+
+1510751605 source:/home/formation/Bureau/AuCiGen/geomatique4/src/decoupage.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"obb.h"
+
+1510753996 source:/home/formation/Bureau/AuCiGen/geomatique4/src/test.cpp
+	<gdal_priv.h>
+	"ogrsf_frmts.h"
+	<iostream>
+	<vector>
+	"Vecteur.h"
+	"obb.h"
+	"decoupage.h"
+

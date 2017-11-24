@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="geomatique4_unit_test" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/geomatique4_unit_test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add directory="../include" />
+					<Add directory="include" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/geomatique4_unit_test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="../include/Vecteur.h" />
+		<Unit filename="../include/decoupage.h" />
+		<Unit filename="../include/obb.h" />
+		<Unit filename="../include/test.h" />
+		<Unit filename="../include/unit_test.h" />
+		<Unit filename="../src/Vecteur.cpp" />
+		<Unit filename="../src/decoupage.cpp" />
+		<Unit filename="../src/obb.cpp" />
+		<Unit filename="../src/test.cpp" />
+		<Unit filename="include/catch.hpp" />
+		<Unit filename="include/unit_test.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/unit_test.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

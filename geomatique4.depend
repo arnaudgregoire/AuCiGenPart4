@@ -1,0 +1,588 @@
+# depslib dependency file v1.0
+1508245657 source:/home/formation/Bureau/geomatique4/main.cpp
+	"ogr_geometry.h"
+	"ogrsf_frmts.h"
+	<iostream>
+
+1486160371 /usr/include/gdal/gdal.h
+	"gdal_version.h"
+	"cpl_port.h"
+	"cpl_error.h"
+	"cpl_progress.h"
+	"cpl_virtualmem.h"
+	"cpl_minixml.h"
+	"ogr_api.h"
+
+1486160371 /usr/include/gdal/gdal_version.h
+
+1486160371 /usr/include/gdal/cpl_port.h
+	"cpl_config.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<limits.h>
+	<time.h>
+	<errno.h>
+	<locale.h>
+	<direct.h>
+	<strings.h>
+	<dbmalloc.h>
+	<dmalloc.h>
+	<locale.h>
+	<unistd.h>
+	<sys/types.h>
+	<iconv.h>
+	<sys/mman.h>
+	<signal.h>
+	<dlfcn.h>
+	<netdb.h>
+	<fcntl.h>
+	<string>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cstddef>
+	<ostream>
+	<iostream>
+	<sstream>
+	<float.h>
+	<ieeefp.h>
+	<vector>
+	<map>
+	<set>
+	<string>
+	<cstddef>
+	<limits>
+	<sstream>
+	<fstream>
+	<algorithm>
+
+1486160370 /usr/include/gdal/cpl_config.h
+	"cpl_config_extras.h"
+
+1486160371 /usr/include/gdal/cpl_config_extras.h
+
+1486160371 /usr/include/gdal/cpl_error.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal/cpl_progress.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal/cpl_virtualmem.h
+	"cpl_port.h"
+	"cpl_vsi.h"
+
+1486160371 /usr/include/gdal/cpl_vsi.h
+	"cpl_port.h"
+	<unistd.h>
+	<sys/stat.h>
+	"cpl_error.h"
+
+1486160371 /usr/include/gdal/cpl_minixml.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal/ogr_api.h
+	"cpl_progress.h"
+	"cpl_minixml.h"
+	"ogr_core.h"
+
+1486160371 /usr/include/gdal/ogr_core.h
+	"cpl_port.h"
+	"gdal_version.h"
+
+1486160371 /usr/include/gdal//gdal.h
+	"gdal_version.h"
+	"cpl_port.h"
+	"cpl_error.h"
+	"cpl_progress.h"
+	"cpl_virtualmem.h"
+	"cpl_minixml.h"
+	"ogr_api.h"
+
+1486160371 /usr/include/gdal//gdal_version.h
+
+1486160371 /usr/include/gdal//cpl_port.h
+	"cpl_config.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<limits.h>
+	<time.h>
+	<errno.h>
+	<locale.h>
+	<direct.h>
+	<strings.h>
+	<dbmalloc.h>
+	<dmalloc.h>
+	<locale.h>
+	<unistd.h>
+	<sys/types.h>
+	<iconv.h>
+	<sys/mman.h>
+	<signal.h>
+	<dlfcn.h>
+	<netdb.h>
+	<fcntl.h>
+	<string>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cstddef>
+	<ostream>
+	<iostream>
+	<sstream>
+	<float.h>
+	<ieeefp.h>
+	<vector>
+	<map>
+	<set>
+	<string>
+	<cstddef>
+	<limits>
+	<sstream>
+	<fstream>
+	<algorithm>
+
+1486160370 /usr/include/gdal//cpl_config.h
+	"cpl_config_extras.h"
+
+1486160371 /usr/include/gdal//cpl_config_extras.h
+
+1486160371 /usr/include/gdal//cpl_error.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal//cpl_progress.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal//cpl_virtualmem.h
+	"cpl_port.h"
+	"cpl_vsi.h"
+
+1486160371 /usr/include/gdal//cpl_vsi.h
+	"cpl_port.h"
+	<unistd.h>
+	<sys/stat.h>
+	"cpl_error.h"
+
+1486160371 /usr/include/gdal//cpl_minixml.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal//ogr_api.h
+	"cpl_progress.h"
+	"cpl_minixml.h"
+	"ogr_core.h"
+
+1486160371 /usr/include/gdal//ogr_core.h
+	"cpl_port.h"
+	"gdal_version.h"
+
+1486160371 /usr/include/gdal//gdal_priv.h
+	"gdal.h"
+	"gdal_frmts.h"
+	"cpl_vsi.h"
+	"cpl_conv.h"
+	"cpl_string.h"
+	"cpl_minixml.h"
+	"cpl_multiproc.h"
+	"cpl_atomic_ops.h"
+	<vector>
+	<map>
+	"ogr_core.h"
+
+1486160371 /usr/include/gdal//gdal_frmts.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal//cpl_conv.h
+	"cpl_port.h"
+	"cpl_vsi.h"
+	"cpl_error.h"
+
+1486160371 /usr/include/gdal//cpl_string.h
+	"cpl_error.h"
+	"cpl_conv.h"
+	"cpl_vsi.h"
+	<string>
+
+1486160371 /usr/include/gdal//cpl_multiproc.h
+	"cpl_port.h"
+
+1486160370 /usr/include/gdal//cpl_atomic_ops.h
+	"cpl_port.h"
+
+1486160371 /usr/include/gdal//ogrsf_frmts.h
+	"cpl_progress.h"
+	"ogr_feature.h"
+	"ogr_featurestyle.h"
+	"gdal_priv.h"
+
+1486160371 /usr/include/gdal//ogr_feature.h
+	"ogr_geometry.h"
+	"ogr_featurestyle.h"
+	"cpl_atomic_ops.h"
+
+1486160371 /usr/include/gdal//ogr_geometry.h
+	"ogr_core.h"
+	"ogr_spatialref.h"
+
+1486160371 /usr/include/gdal//ogr_spatialref.h
+	"ogr_srs_api.h"
+
+1486160371 /usr/include/gdal//ogr_srs_api.h
+	"ogr_core.h"
+
+1486160371 /usr/include/gdal//ogr_featurestyle.h
+	"cpl_conv.h"
+	"cpl_string.h"
+	"ogr_core.h"
+
+1508165529 source:/home/formation/Bureau/geomatique4/test.cpp
+	"ogrsf_frmts.h"
+
+1508398184 source:/home/formation/Bureau/AuCiGen/geomatique4/main.cpp
+	"test.h"
+
+1508251702 /home/formation/Bureau/AuCiGen/geomatique4/test.cpp
+	"ogr_geometry.h"
+	"ogrsf_frmts.h"
+	<iostream>
+
+1508398689 source:/home/formation/Bureau/AuCiGen/geomatique4/test.cpp
+	<gdal_priv.h>
+	"ogrsf_frmts.h"
+	<iostream>
+
+1508398184 /home/formation/Bureau/AuCiGen/geomatique4/test.h
+
+1510130780 source:/home/formation/AuCiGen/geomatique4/main.cpp
+	"test.h"
+	<iostream>
+	<vector>
+
+1509983098 /home/formation/AuCiGen/geomatique4/test.h
+	"ogrsf_frmts.h"
+	<vector>
+	"Vecteur.h"
+
+1510045257 source:/home/formation/AuCiGen/geomatique4/test.cpp
+	<gdal_priv.h>
+	"ogrsf_frmts.h"
+	<iostream>
+	<vector>
+	"Vecteur.h"
+	"obb.h"
+	"decoupage.h"
+
+1510130636 source:/home/formation/AuCiGen/geomatique4/Vecteur.cpp
+	"Vecteur.h"
+	<cmath>
+
+1510061640 /home/formation/AuCiGen/geomatique4/Vecteur.h
+
+1510130456 source:/home/formation/AuCiGen/geomatique4/obb.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"decoupage.h"
+
+1509106976 /home/formation/AuCiGen/geomatique4/obb.h
+
+1510062314 source:/home/formation/AuCiGen/geomatique4/decoupage.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"obb.h"
+	<algorithm>
+
+1509107118 /home/formation/AuCiGen/geomatique4/decoupage.h
+
+1510130456 source:/home/formation/AuCiGen/geomatique4/src/obb.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"decoupage.h"
+
+1510061640 /home/formation/AuCiGen/geomatique4/include/Vecteur.h
+
+1509107118 /home/formation/AuCiGen/geomatique4/include/decoupage.h
+
+1510142566 source:/home/formation/AuCiGen/geomatique4/src/test.cpp
+	<gdal_priv.h>
+	"ogrsf_frmts.h"
+	<iostream>
+	<vector>
+	"Vecteur.h"
+	"obb.h"
+	"decoupage.h"
+
+1509106976 /home/formation/AuCiGen/geomatique4/include/obb.h
+
+1510130636 source:/home/formation/AuCiGen/geomatique4/src/Vecteur.cpp
+	"Vecteur.h"
+	<cmath>
+
+1510142631 source:/home/formation/AuCiGen/geomatique4/src/main.cpp
+	"test.h"
+	<iostream>
+	<vector>
+
+1510142575 /home/formation/AuCiGen/geomatique4/include/test.h
+	"ogrsf_frmts.h"
+	<vector>
+	"Vecteur.h"
+
+1510142491 source:/home/formation/AuCiGen/geomatique4/src/decoupage.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"obb.h"
+	<algorithm>
+
+1510751605 source:/home/formation/Bureau/AuCiGen/geomatique4/src/decoupage.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"obb.h"
+
+1510325886 /home/formation/Bureau/AuCiGen/geomatique4/include/Vecteur.h
+
+1510240133 /home/formation/Bureau/AuCiGen/geomatique4/include/obb.h
+	"Vecteur.h"
+	<vector>
+
+1510243077 source:/home/formation/Bureau/AuCiGen/geomatique4/src/obb.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"decoupage.h"
+	<algorithm>
+
+1510321876 /home/formation/Bureau/AuCiGen/geomatique4/include/decoupage.h
+
+1510753996 source:/home/formation/Bureau/AuCiGen/geomatique4/src/test.cpp
+	<gdal_priv.h>
+	"ogrsf_frmts.h"
+	<iostream>
+	<vector>
+	"Vecteur.h"
+	"obb.h"
+	"decoupage.h"
+
+1510325890 source:/home/formation/Bureau/AuCiGen/geomatique4/src/Vecteur.cpp
+	"Vecteur.h"
+	<cmath>
+
+1510841236 source:/home/formation/Bureau/AuCiGen/geomatique4/src/main.cpp
+	"test.h"
+	<iostream>
+	<vector>
+	"transition.h"
+
+1510142575 /home/formation/Bureau/AuCiGen/geomatique4/include/test.h
+	"ogrsf_frmts.h"
+	<vector>
+	"Vecteur.h"
+
+1510572226 source:/home/formation/Bureau/AuCiGen/geomatique4/src/unit_test.cpp
+	"Vecteur.h"
+	"ogrsf_frmts.h"
+	<iostream>
+	<cmath>
+	"obb.h"
+	"catch.hpp"
+
+1510236681 /home/formation/Bureau/AuCiGen/geomatique4/include/catch.hpp
+	<TargetConditionals.h>
+	<iosfwd>
+	<string>
+	<cstdint>
+	<vector>
+	<memory>
+	<cstddef>
+	<string>
+	<iosfwd>
+	<sstream>
+	<vector>
+	<cstddef>
+	<type_traits>
+	<string>
+	<utility>
+	<tuple>
+	<ctime>
+	<ratio>
+	<chrono>
+	<ostream>
+	<string>
+	<sstream>
+	<string>
+	<signal.h>
+	<cstddef>
+	<string>
+	<cstdint>
+	<string>
+	<cstdint>
+	<string>
+	<string>
+	<memory>
+	<exception>
+	<string>
+	<vector>
+	<sstream>
+	<stdexcept>
+	<type_traits>
+	<string>
+	<iosfwd>
+	<string>
+	<vector>
+	<string>
+	<string>
+	<vector>
+	<memory>
+	<string>
+	<string>
+	<vector>
+	<memory>
+	<string>
+	<iosfwd>
+	<string>
+	<vector>
+	<memory>
+	<streambuf>
+	<streambuf>
+	<ostream>
+	<fstream>
+	<memory>
+	<memory>
+	<vector>
+	<string>
+	<string>
+	<string>
+	<iosfwd>
+	<map>
+	<set>
+	<memory>
+	<algorithm>
+	<cstring>
+	<cfloat>
+	<cstdio>
+	<assert.h>
+	<memory>
+	<string>
+	<vector>
+	<memory>
+	<cmath>
+	<limits>
+	<memory>
+	<cassert>
+	<cassert>
+	<ostream>
+	<sstream>
+	<vector>
+	<memory>
+	<set>
+	<algorithm>
+	<fstream>
+	<ctime>
+	<cstring>
+	<ostream>
+	<AfxWin.h>
+	<windows.h>
+	<unistd.h>
+	<string>
+	<assert.h>
+	<stdbool.h>
+	<sys/types.h>
+	<unistd.h>
+	<sys/sysctl.h>
+	<fstream>
+	<string>
+	<cerrno>
+	<vector>
+	<string>
+	<memory>
+	<string>
+	<signal.h>
+	<signal.h>
+	<crtdbg.h>
+	<set>
+	<limits>
+	<algorithm>
+	<iomanip>
+	<algorithm>
+	<cstdlib>
+	<vector>
+	<set>
+	<algorithm>
+	<ios>
+	<map>
+	<string>
+	<map>
+	<vector>
+	<exception>
+	<string>
+	<cassert>
+	<algorithm>
+	<memory>
+	<iosfwd>
+	<cstdlib>
+	<iomanip>
+	<stdexcept>
+	<cstdio>
+	<iostream>
+	<algorithm>
+	<ostream>
+	<cstring>
+	<cctype>
+	<ostream>
+	<cassert>
+	<cstring>
+	<cctype>
+	<exception>
+	<algorithm>
+	<sstream>
+	<algorithm>
+	<assert.h>
+	<stdexcept>
+	<memory>
+	<algorithm>
+	<string>
+	<vector>
+	<memory>
+	<chrono>
+	<iomanip>
+	<ostream>
+	<sstream>
+	<vector>
+	<iomanip>
+	<cstring>
+	<cfloat>
+	<cstdio>
+	<assert.h>
+	<memory>
+	<cfloat>
+	<cstdio>
+	<assert.h>
+	<ctime>
+	<algorithm>
+
+1510752760 /home/formation/Bureau/AuCiGen/geomatique4/include/transition.h
+
+1510756040 source:/home/formation/Bureau/AuCiGen/geomatique4/src/transition.cpp
+	"ogrsf_frmts.h"
+	<vector>
+	"test.h"
+	"Vecteur.h"
+	<iostream>
+	"decoupage.h"
+

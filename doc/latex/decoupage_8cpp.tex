@@ -1,0 +1,147 @@
+\hypertarget{decoupage_8cpp}{}\section{src/decoupage.cpp File Reference}
+\label{decoupage_8cpp}\index{src/decoupage.\+cpp@{src/decoupage.\+cpp}}
+{\ttfamily \#include \char`\"{}Vecteur.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ogrsf\+\_\+frmts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}obb.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{decoupage_8cpp_aedd9e36463eb3a5aece97a01e8e53292}{ecrire}} (O\+G\+R\+Geometry $\ast$poly\+\_\+write, O\+G\+R\+Layer $\ast$layer\+\_\+w)
+\item 
+bool \mbox{\hyperlink{decoupage_8cpp_abb78903005aed32c4584957b1c3f5b1f}{check\+\_\+dimension}} (O\+G\+R\+Polygon $\ast$poly)
+\begin{DoxyCompactList}\small\item\em Check if the given polygon has a width 15x bigger than it height. \end{DoxyCompactList}\item 
+std\+::vector$<$ O\+G\+R\+Polygon $\ast$ $>$ \mbox{\hyperlink{decoupage_8cpp_ada0026ae77176cbc354f0757a80bf3ee}{decoupage}} (O\+G\+R\+Polygon $\ast$poly\+\_\+before)
+\begin{DoxyCompactList}\small\item\em Function that split one polygon into two equals parts along the Oriented bounding box. \end{DoxyCompactList}\item 
+std\+::vector$<$ O\+G\+R\+Polygon $\ast$ $>$ \mbox{\hyperlink{decoupage_8cpp_a24b95b2bb62fdd067e5404c8e82b2f5c}{multi\+\_\+to\+\_\+single}} (std\+::vector$<$ O\+G\+R\+Polygon $\ast$$>$ l\+\_\+poly\+\_\+multi)
+\begin{DoxyCompactList}\small\item\em Transform multipolygons to polygons and append them into a vector of Polygons. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{decoupage_8cpp_a6863151c0687ef5855de5ca869c6504f}{recur}} (int seuil, O\+G\+R\+Polygon $\ast$poly, O\+G\+R\+Layer $\ast$layer\+\_\+w)
+\item 
+bool \mbox{\hyperlink{decoupage_8cpp_a04499548907a4ca459b63bf60d6008d5}{test\+\_\+aire}} (int seuil, std\+::vector$<$ O\+G\+R\+Polygon $\ast$$>$ tab)
+\begin{DoxyCompactList}\small\item\em Function that test if a polygon in the given vector has an area above the given threshold. Returns true if there is at least one above. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{decoupage_8cpp_a715d7ffc85bc1c1d986ee12ccac26018}{imperative}} (int seuil, O\+G\+R\+Polygon $\ast$poly, O\+G\+R\+Layer $\ast$layer\+\_\+w)
+\begin{DoxyCompactList}\small\item\em Imperative function that implement algorithm 2 of scientific given publication Split along the oriented bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{decoupage_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}{c}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{decoupage_8cpp_abb78903005aed32c4584957b1c3f5b1f}\label{decoupage_8cpp_abb78903005aed32c4584957b1c3f5b1f}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!check\+\_\+dimension@{check\+\_\+dimension}}
+\index{check\+\_\+dimension@{check\+\_\+dimension}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{check\+\_\+dimension()}{check\_dimension()}}
+{\footnotesize\ttfamily bool check\+\_\+dimension (\begin{DoxyParamCaption}\item[{O\+G\+R\+Polygon $\ast$}]{poly }\end{DoxyParamCaption})}
+
+
+
+Check if the given polygon has a width 15x bigger than it height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O\+G\+R\+Polygon$\ast$} & poly\+\_\+before The polygon you want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true if the given polygon has a width 15x bigger than it height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{decoupage_8cpp_ada0026ae77176cbc354f0757a80bf3ee}\label{decoupage_8cpp_ada0026ae77176cbc354f0757a80bf3ee}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!decoupage@{decoupage}}
+\index{decoupage@{decoupage}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{decoupage()}{decoupage()}}
+{\footnotesize\ttfamily std\+::vector$<$O\+G\+R\+Polygon$\ast$$>$ decoupage (\begin{DoxyParamCaption}\item[{O\+G\+R\+Polygon $\ast$}]{poly\+\_\+before }\end{DoxyParamCaption})}
+
+
+
+Function that split one polygon into two equals parts along the Oriented bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O\+G\+R\+Polygon$\ast$} & poly\+\_\+before The polygon you want to split \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+O\+G\+R\+Polygon$\ast$$>$ Size-\/2 Vector that contained the two parts of the splitted polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{decoupage_8cpp_aedd9e36463eb3a5aece97a01e8e53292}\label{decoupage_8cpp_aedd9e36463eb3a5aece97a01e8e53292}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!ecrire@{ecrire}}
+\index{ecrire@{ecrire}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{ecrire()}{ecrire()}}
+{\footnotesize\ttfamily void ecrire (\begin{DoxyParamCaption}\item[{O\+G\+R\+Geometry $\ast$}]{poly\+\_\+write,  }\item[{O\+G\+R\+Layer $\ast$}]{layer\+\_\+w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoupage_8cpp_a715d7ffc85bc1c1d986ee12ccac26018}\label{decoupage_8cpp_a715d7ffc85bc1c1d986ee12ccac26018}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!imperative@{imperative}}
+\index{imperative@{imperative}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{imperative()}{imperative()}}
+{\footnotesize\ttfamily int imperative (\begin{DoxyParamCaption}\item[{int}]{seuil,  }\item[{O\+G\+R\+Polygon $\ast$}]{poly,  }\item[{O\+G\+R\+Layer $\ast$}]{layer\+\_\+w }\end{DoxyParamCaption})}
+
+
+
+Imperative function that implement algorithm 2 of scientific given publication Split along the oriented bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O\+G\+R\+Polygon$\ast$} & poly Polygon to split \\
+\hline
+{\em O\+G\+R\+Layer} & $\ast$layer\+\_\+w The layer where the polygon will be write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0, when the algorithm end 
+\end{DoxyReturn}
+\mbox{\Hypertarget{decoupage_8cpp_a24b95b2bb62fdd067e5404c8e82b2f5c}\label{decoupage_8cpp_a24b95b2bb62fdd067e5404c8e82b2f5c}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!multi\+\_\+to\+\_\+single@{multi\+\_\+to\+\_\+single}}
+\index{multi\+\_\+to\+\_\+single@{multi\+\_\+to\+\_\+single}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{multi\+\_\+to\+\_\+single()}{multi\_to\_single()}}
+{\footnotesize\ttfamily std\+::vector$<$O\+G\+R\+Polygon$\ast$$>$ multi\+\_\+to\+\_\+single (\begin{DoxyParamCaption}\item[{std\+::vector$<$ O\+G\+R\+Polygon $\ast$$>$}]{l\+\_\+poly\+\_\+multi }\end{DoxyParamCaption})}
+
+
+
+Transform multipolygons to polygons and append them into a vector of Polygons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::vector$<$\+O\+G\+R\+Polygon$\ast$$>$} & The list of suspicious polygons that could be multipolygons \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+O\+G\+R\+Polygon$\ast$$>$ The same vector but with multipolygons splitted into singles parts 
+\end{DoxyReturn}
+\mbox{\Hypertarget{decoupage_8cpp_a6863151c0687ef5855de5ca869c6504f}\label{decoupage_8cpp_a6863151c0687ef5855de5ca869c6504f}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!recur@{recur}}
+\index{recur@{recur}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{recur()}{recur()}}
+{\footnotesize\ttfamily int recur (\begin{DoxyParamCaption}\item[{int}]{seuil,  }\item[{O\+G\+R\+Polygon $\ast$}]{poly,  }\item[{O\+G\+R\+Layer $\ast$}]{layer\+\_\+w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoupage_8cpp_a04499548907a4ca459b63bf60d6008d5}\label{decoupage_8cpp_a04499548907a4ca459b63bf60d6008d5}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!test\+\_\+aire@{test\+\_\+aire}}
+\index{test\+\_\+aire@{test\+\_\+aire}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{test\+\_\+aire()}{test\_aire()}}
+{\footnotesize\ttfamily bool test\+\_\+aire (\begin{DoxyParamCaption}\item[{int}]{seuil,  }\item[{std\+::vector$<$ O\+G\+R\+Polygon $\ast$$>$}]{tab }\end{DoxyParamCaption})}
+
+
+
+Function that test if a polygon in the given vector has an area above the given threshold. Returns true if there is at least one above. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & seuil Threshold \\
+\hline
+{\em std\+::vector$<$\+O\+G\+R\+Polygon$\ast$$>$} & tab Vector of given Polygons \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if there is at least one polgon\textquotesingle{}s area above the threshold 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{decoupage_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}\label{decoupage_8cpp_a4e1e0e72dd773439e333c84dd762a9c3}} 
+\index{decoupage.\+cpp@{decoupage.\+cpp}!c@{c}}
+\index{c@{c}!decoupage.\+cpp@{decoupage.\+cpp}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily int c = 0}
+

@@ -1,0 +1,84 @@
+\hypertarget{transition_8cpp}{}\section{src/transition.cpp File Reference}
+\label{transition_8cpp}\index{src/transition.\+cpp@{src/transition.\+cpp}}
+{\ttfamily \#include \char`\"{}ogrsf\+\_\+frmts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}test.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Vecteur.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}decoupage.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVecteur}{Vecteur}} $>$ \mbox{\hyperlink{transition_8cpp_ab6a38966f756dd58094a9f5323b342ed}{emprise\+\_\+shp}} (const char $\ast$nom\+\_\+couche, const char $\ast$nom\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em Compute the bound of the shapefile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{transition_8cpp_acab7e925c05b096c83c83f8c693fd149}{difference}} (O\+G\+R\+Polygon $\ast$poly\+\_\+emprise, O\+G\+R\+Multi\+Polygon $\ast$poly, const char $\ast$nom\+\_\+couche, const char $\ast$nom\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em Compute the Symetric difference of two given polygon and write it in a shapefile whith name given in parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{transition_8cpp_a6fd68e51eb01c11e0b5ed1e3308fb545}{adapt}} (const char $\ast$nom\+\_\+couche, const char $\ast$nom\+\_\+layer, const char $\ast$couche\+\_\+sortie, const char $\ast$layer\+\_\+sortie)
+\begin{DoxyCompactList}\small\item\em Transform a street network composed of one polygon into a network of parcels with an area between 300 and 100 000 square meters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{transition_8cpp_a6fd68e51eb01c11e0b5ed1e3308fb545}\label{transition_8cpp_a6fd68e51eb01c11e0b5ed1e3308fb545}} 
+\index{transition.\+cpp@{transition.\+cpp}!adapt@{adapt}}
+\index{adapt@{adapt}!transition.\+cpp@{transition.\+cpp}}
+\subsubsection{\texorpdfstring{adapt()}{adapt()}}
+{\footnotesize\ttfamily void adapt (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{const char $\ast$}]{nom\+\_\+layer,  }\item[{const char $\ast$}]{couche\+\_\+sortie,  }\item[{const char $\ast$}]{layer\+\_\+sortie }\end{DoxyParamCaption})}
+
+
+
+Transform a street network composed of one polygon into a network of parcels with an area between 300 and 100 000 square meters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char$\ast$ nom\+\_\+couche The name of the shapefile containing the street network \\
+\hline
+{\em const} & char$\ast$ nom\+\_\+layer The name of the layer containing the street network \\
+\hline
+{\em const} & char$\ast$ couche\+\_\+sortie The name of the shapefile which will contain the parcel network \\
+\hline
+{\em const} & char$\ast$ layer\+\_\+sortie The name of the layer which will contain the parcel network \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void only writing in file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transition_8cpp_acab7e925c05b096c83c83f8c693fd149}\label{transition_8cpp_acab7e925c05b096c83c83f8c693fd149}} 
+\index{transition.\+cpp@{transition.\+cpp}!difference@{difference}}
+\index{difference@{difference}!transition.\+cpp@{transition.\+cpp}}
+\subsubsection{\texorpdfstring{difference()}{difference()}}
+{\footnotesize\ttfamily void difference (\begin{DoxyParamCaption}\item[{O\+G\+R\+Polygon $\ast$}]{poly\+\_\+emprise,  }\item[{O\+G\+R\+Multi\+Polygon $\ast$}]{poly,  }\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{const char $\ast$}]{nom\+\_\+layer }\end{DoxyParamCaption})}
+
+
+
+Compute the Symetric difference of two given polygon and write it in a shapefile whith name given in parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O\+G\+R\+Polygon$\ast$} & poly\+\_\+emprise The first polygon \\
+\hline
+{\em O\+G\+R\+Multi\+Polygon$\ast$} & poly The second polygon, which will be used with the first one to compute the symmetri difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void only writing in file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transition_8cpp_ab6a38966f756dd58094a9f5323b342ed}\label{transition_8cpp_ab6a38966f756dd58094a9f5323b342ed}} 
+\index{transition.\+cpp@{transition.\+cpp}!emprise\+\_\+shp@{emprise\+\_\+shp}}
+\index{emprise\+\_\+shp@{emprise\+\_\+shp}!transition.\+cpp@{transition.\+cpp}}
+\subsubsection{\texorpdfstring{emprise\+\_\+shp()}{emprise\_shp()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVecteur}{Vecteur}}$>$ emprise\+\_\+shp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{const char $\ast$}]{nom\+\_\+layer }\end{DoxyParamCaption})}
+
+
+
+Compute the bound of the shapefile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char$\ast$ nom\+\_\+couche name of the shapefile \\
+\hline
+{\em const} & char$\ast$ nom\+\_\+layer name of the layer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Vecteur$>$ 2-\/\+Size vector containin two points (minx,miny) (maxx,maxy) int he \mbox{\hyperlink{classVecteur}{Vecteur}} format 
+\end{DoxyReturn}

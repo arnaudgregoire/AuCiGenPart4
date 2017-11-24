@@ -1,0 +1,1645 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Workbook xmlns:html='http://www.w3.org/TR/REC-html40'
+          xmlns:o='urn:schemas-microsoft-com:office:office'
+          xmlns:ss='urn:schemas-microsoft-com:office:spreadsheet'
+          xmlns:x='urn:schemas-microsoft-com:office:excel'
+          xmlns='urn:schemas-microsoft-com:office:spreadsheet'>
+  <DocumentProperties xmlns='urn:schemas-microsoft-com:office:office'>
+    <LastAuthor>Grégoire Arnaud</LastAuthor>
+    <Created>2017-11-16 14:09:08 UTC</Created>
+    <LastSaved>%= Time.now.utc %></LastSaved>
+    <Version>1.0</Version>
+  </DocumentProperties>
+  <OfficeDocumentSettings xmlns='urn:schemas-microsoft-com:office:office'>
+    <AllowPNG />
+  </OfficeDocumentSettings>
+  <ExcelWorkbook xmlns='urn:schemas-microsoft-com:office:excel'>
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID='Default' ss:Name='Normal'>
+      <Alignment ss:Vertical='Top' ss:WrapText='1' />
+      <Borders />
+      <Font ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' x:Family='Swiss' />
+      <Interior />
+      <NumberFormat />
+      <Protection />
+    </Style>
+    <Style ss:ID='title'>
+      <Alignment ss:Vertical='Bottom' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='15' />
+    </Style>
+    <Style ss:ID='top-base-stats'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Center' ss:WrapText='1' />
+      <Font ss:Bold='0' ss:Color='#000000' ss:FontName='Calibri' ss:Size='11' />
+    </Style>
+    <Style ss:ID='table-header'>
+      <Alignment ss:Horizontal='Center' ss:Vertical='Center' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+      <Interior ss:Color='#CCFFFF' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='numeric'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Top'/>
+      <Font ss:Bold='0' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+    </Style>
+    <Style ss:ID='theme-summary'>
+      <Alignment ss:Horizontal='Left' ss:Vertical='Top' ss:WrapText='1' />
+      <Font ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+      <Interior ss:Color='#C0C0C0' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='theme-total'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Bottom' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+      <Interior ss:Color='#C0C0C0' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='theme-cell'>
+      <Alignment ss:Vertical='Top' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+    </Style>
+    <Style ss:ID='backlog-summary'>
+      <Alignment ss:Horizontal='Left' ss:Vertical='Top' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='14' />
+      <Interior ss:Color='#CCFFFF' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='backlog-total'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Bottom' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='14' />
+      <Interior ss:Color='#CCFFFF' ss:Pattern='Solid' />
+    </Style>
+          <Style ss:ID='story-color-0'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#ff9900' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+  </Styles>
+  <Worksheet ss:Name='Backlog Report'>
+  <Table>
+    <Column ss:AutoFitWidth="1" ss:Width="90" /> <!--Theme-->
+    <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--ID-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--User Story-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Acceptance Criteria-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Comments-->
+    <Column ss:AutoFitWidth="1" ss:Width="50" /> <!--Sprint-->
+    <Column ss:AutoFitWidth="1" ss:Width="90" /> <!--Status-->
+      <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--Score -->
+    <Row ss:AutoFitHeight='0' ss:Height='18'>
+      <Cell ss:MergeAcross='3' ss:StyleID='title'>
+        <Data ss:Type='String'>Sujet 4</Data>
+      </Cell>
+      <Cell ss:MergeAcross='4' ss:StyleID='top-base-stats'>
+        <Data ss:Type='String'></Data>
+      </Cell>
+    </Row>
+    <Row>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Theme</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>ID</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>User Story</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Acceptance Criteria</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Comments</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Sprint</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Status</Data>
+      </Cell>
+        <Cell ss:StyleID='table-header'>
+          <Data ss:Type='String'><span class="translation_missing" title="translation missing: en.backlog.points">Points</span></Data>
+        </Cell>
+    </Row>
+        <Row>
+      <Cell ss:MergeDown='12' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>INITIALIZE</Data>
+      </Cell>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>IN11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> create a repository
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> share source code with members group</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Have a available repository for all members</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have a virtual machine
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it for development</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Have a virtual machine created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN14</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know the output of Project 3 Group
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> define my input format</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Input format defined</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>be agree with group 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN15</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know the input of Project 5
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> define my output format</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Output format defined</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>be agree with group 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN16</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Install IDE (CodeBlocks) on VM&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it to develop</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Codeblocks works</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>VM installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN17</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Install QGIS on VM
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it to display my shapefiles</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) QGIS works</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>VM installed, decent calcul power</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN18</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> create a C++ Project
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it to develop</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) C++ Project created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> synchronise my c++ project with the repository
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> share the source code with others</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) source code synchronised</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN19</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> install GDAL functions
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use GDAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) GDAL installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN110</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> include GDAL functions
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use GDAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) GDAL functions included</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM &amp;GDAL installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>2.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN111</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> As developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> install and configure CGAL Library 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use CGAL functionalities</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) CGAL Library installed and configured and operational</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM &amp;GDAL installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>13.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>IN112</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> include CGAL functionnalities
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use CGAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) GDAL functionnalities included</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;INITIALIZE&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>42.0 points</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='7' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='3' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>ANALYSE</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>AN13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Read Scientific publication
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> better understand what does the algorithm do</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Be able to implement algorithm</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>AN111</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Read GDAL documentation about Vector API&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use GDAL functions in algorithm</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Be able to use GDAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>AN11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Read and understand CGAL documentation and the straight skeleton algorithm
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Be able to work with CGAL library using the C++ language</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;ANALYSE&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>36.0 points</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='7' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='3' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>SHP MODIFICATION</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>SH114</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Open shapefile using c++&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> manipulate them in c++</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Shapefile opened in c++</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>SH115</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Modify shapefile using c++&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it in algorithm</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Shapefile modified in c++</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>SH116</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> save my modified shapefile using c++
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) shapefile  saved</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>13.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;SHP MODIFICATION&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>53.0 points</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='7' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='1' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>OUTPUT FORMAT MODIFICATION</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>OF14</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Regroup splitted parcels  in 1 shapefile&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> have one unique output</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) one shapefile merging data created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;OUTPUT FORMAT MODIFICATION&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>20.0 points</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='7' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='2' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>ALGORITHM IMPLEMENTATION</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>AL12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Extract polygons from created network&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> work on them using algorithms</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) polygons extracted</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>40.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>AL13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> implement a Splitting algorithm&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> create parcels</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) parcels correcly created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>100.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;ALGORITHM IMPLEMENTATION&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>140.0 points</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='7' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='4' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>TEST &amp; FINALISATION</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TE117</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> display the shapefile i have modified
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> check the modification</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Shapefile correctly modified</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TE11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> create final report
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> present our work </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Final report done</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TE12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> prepare presentation (Powerpoint)
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> present our work</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Powerpoint &amp; presentation done</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TE13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> integrate project 4 in the TSI project
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> add our work to the global project</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Global project worked correctly</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>100.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;TEST &amp; FINALISATION&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>143.0 points</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='7' />
+  </Row>
+
+    <Row ss:AutoFitHeight='0' ss:Height='18'>
+      <Cell ss:MergeAcross='3' ss:StyleID='backlog-summary'>
+        <Data ss:Type='String'>Total for backlog &#x27;Sujet 4&#x27;</Data>
+      </Cell>
+      <Cell ss:MergeAcross='4' ss:StyleID='backlog-total'>
+        <Data ss:Type='String'>434.0 points</Data>
+      </Cell>
+    </Row>
+  </Table>
+  <WorksheetOptions xmlns='urn:schemas-microsoft-com:office:excel'>
+    <PageLayoutZoom>0</PageLayoutZoom>
+    <Selected />
+    <Panes />
+    <ProtectObjects>False</ProtectObjects>
+    <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+</Worksheet>
+  <Worksheet ss:Name='Story List'>
+  <Table>
+    <Column ss:AutoFitWidth="1" ss:Width="90" /> <!--Theme-->
+    <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--ID-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--User Story-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Acceptance Criteria-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Comments-->
+    <Column ss:AutoFitWidth="1" ss:Width="50" /> <!--Sprint-->
+    <Column ss:AutoFitWidth="1" ss:Width="50" /> <!--Status-->
+      <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--Score -->
+    <Row>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Theme</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>ID</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>User Story</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Acceptance Criteria</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Comments</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Sprint</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Status</Data>
+      </Cell>
+        <Cell ss:StyleID='table-header'>
+          <Data ss:Type='String'><span class="translation_missing" title="translation missing: en.backlog.points">Points</span></Data>
+        </Cell>
+    </Row>
+        <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>IN11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> create a repository
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> share source code with members group</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Have a available repository for all members</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have a virtual machine
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it for development</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Have a virtual machine created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN14</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know the output of Project 3 Group
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> define my input format</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Input format defined</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>be agree with group 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN15</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know the input of Project 5
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> define my output format</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Output format defined</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>be agree with group 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN16</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Install IDE (CodeBlocks) on VM&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it to develop</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Codeblocks works</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>VM installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN17</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Install QGIS on VM
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it to display my shapefiles</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) QGIS works</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>VM installed, decent calcul power</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN18</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> create a C++ Project
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it to develop</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) C++ Project created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>1.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> synchronise my c++ project with the repository
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> share the source code with others</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) source code synchronised</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN19</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> install GDAL functions
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use GDAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) GDAL installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN110</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> include GDAL functions
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use GDAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) GDAL functions included</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM &amp;GDAL installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>2.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN111</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> As developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> install and configure CGAL Library 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use CGAL functionalities</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) CGAL Library installed and configured and operational</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>CodeBlocks &amp; VM &amp;GDAL installed</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>13.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>INITIALIZE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>IN112</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> include CGAL functionnalities
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use CGAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) GDAL functionnalities included</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>ANALYSE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>AN13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Read Scientific publication
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> better understand what does the algorithm do</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Be able to implement algorithm</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>ANALYSE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>AN111</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Read GDAL documentation about Vector API&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use GDAL functions in algorithm</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Be able to use GDAL Vector API</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>ANALYSE</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>AN11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Read and understand CGAL documentation and the straight skeleton algorithm
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Be able to work with CGAL library using the C++ language</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>SHP MODIFICATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>SH114</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Open shapefile using c++&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> manipulate them in c++</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Shapefile opened in c++</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>SHP MODIFICATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>SH115</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Modify shapefile using c++&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> use it in algorithm</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Shapefile modified in c++</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>SHP MODIFICATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>SH116</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> save my modified shapefile using c++
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) shapefile  saved</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>13.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>OUTPUT FORMAT MODIFICATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>OF14</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Regroup splitted parcels  in 1 shapefile&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> have one unique output</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) one shapefile merging data created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>ALGORITHM IMPLEMENTATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>AL12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> Extract polygons from created network&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> work on them using algorithms</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) polygons extracted</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>40.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>ALGORITHM IMPLEMENTATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>AL13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> implement a Splitting algorithm&#10;&#13;
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> create parcels</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) parcels correcly created</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>100.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>TEST &amp; FINALISATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TE117</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> display the shapefile i have modified
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> check the modification</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Shapefile correctly modified</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>3.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>TEST &amp; FINALISATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TE11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> create final report
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> present our work </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Final report done</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>TEST &amp; FINALISATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TE12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> prepare presentation (Powerpoint)
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> present our work</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Powerpoint &amp; presentation done</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>TEST &amp; FINALISATION</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TE13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> team project 4
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> integrate project 4 in the TSI project
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> add our work to the global project</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Global project worked correctly</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>100.0</Data>
+  </Cell>
+
+    </Row>
+
+  </Table>
+  <WorksheetOptions xmlns='urn:schemas-microsoft-com:office:excel'>
+    <PageLayoutZoom>0</PageLayoutZoom>
+    <Selected />
+    <Panes />
+    <ProtectObjects>False</ProtectObjects>
+    <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <AutoFilter x:Range='R1C1:R1C8' xmlns='urn:schemas-microsoft-com:office:excel'></AutoFilter>
+</Worksheet>
+</Workbook>

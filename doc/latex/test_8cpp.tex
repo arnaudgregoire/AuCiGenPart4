@@ -1,0 +1,59 @@
+\hypertarget{test_8cpp}{}\section{src/test.cpp File Reference}
+\label{test_8cpp}\index{src/test.\+cpp@{src/test.\+cpp}}
+{\ttfamily \#include $<$gdal\+\_\+priv.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ogrsf\+\_\+frmts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Vecteur.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}obb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}decoupage.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ char $\ast$ $>$ \mbox{\hyperlink{test_8cpp_a00f066a606fc6ab727fa30184bfe340c}{lecture}} (const char $\ast$nom\+\_\+couche, const char $\ast$nom\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em Read all features of the given layer in the given shapefile and stock them into a vector of char$\ast$ Well-\/\+Known-\/\+Text format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8cpp_a5f44da3e0ad14791515bd090c56ed0c8}{ecriture}} (std\+::vector$<$ char $\ast$$>$ tab\+\_\+export\+\_\+poly, const char $\ast$nom\+\_\+couche, int seuil)
+\begin{DoxyCompactList}\small\item\em Split all polygons with the O\+BB method if they have an area taller than the given threshold and write them in the given shapefile name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{test_8cpp_a5f44da3e0ad14791515bd090c56ed0c8}\label{test_8cpp_a5f44da3e0ad14791515bd090c56ed0c8}} 
+\index{test.\+cpp@{test.\+cpp}!ecriture@{ecriture}}
+\index{ecriture@{ecriture}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{ecriture()}{ecriture()}}
+{\footnotesize\ttfamily void ecriture (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $\ast$$>$}]{tab\+\_\+export\+\_\+poly,  }\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{int}]{seuil }\end{DoxyParamCaption})}
+
+
+
+Split all polygons with the O\+BB method if they have an area taller than the given threshold and write them in the given shapefile name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::vector$<$char$\ast$$>$} & tab\+\_\+export\+\_\+poly a vector of polygon in the W\+KT format \\
+\hline
+{\em const} & char$\ast$ nom\+\_\+couche The name of the shapefile where you want the data to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int seuil the treshold area that determine if each polygon will be splitted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_a00f066a606fc6ab727fa30184bfe340c}\label{test_8cpp_a00f066a606fc6ab727fa30184bfe340c}} 
+\index{test.\+cpp@{test.\+cpp}!lecture@{lecture}}
+\index{lecture@{lecture}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{lecture()}{lecture()}}
+{\footnotesize\ttfamily std\+::vector$<$char$\ast$$>$ lecture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nom\+\_\+couche,  }\item[{const char $\ast$}]{nom\+\_\+layer }\end{DoxyParamCaption})}
+
+
+
+Read all features of the given layer in the given shapefile and stock them into a vector of char$\ast$ Well-\/\+Known-\/\+Text format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char$\ast$ nom\+\_\+couche The name of the Shapefile where the data will be read \\
+\hline
+{\em const} & char$\ast$ nom\+\_\+layer The name of the layer where the data will be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$char$\ast$$>$ a vector of char$\ast$ containing the exported polygons in W\+KT format 
+\end{DoxyReturn}
