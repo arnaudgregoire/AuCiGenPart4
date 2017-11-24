@@ -13,19 +13,19 @@ AuCiGen (Automated City Generation) is a global project which is composed of 5 s
 - Scrum Master : Houssem Adouni
 - Developers : Salim Alioua & El-Hadi Bouchaour
 
-##Input
+## Input
 
 Our Project takes in input a Polygon-shaped street network 
 
-##Output
+## Output
 
 Our project return a partitioning of parcels enclosed by streets
 
-##Product Backlog 
+## Product Backlog 
 
 Our product backlog (with easy-backlog.fr)  is in the folder scrum as backlog.xls
 
-##Documentation
+## Documentation
 
 Our documentation is in the doc folder. It was generated with Doxygen.
 
