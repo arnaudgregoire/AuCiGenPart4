@@ -1,5 +1,7 @@
 # Project Geomatique 4 
 
+followed by project https://github.com/azarz/AuCiGen-ABuGeR
+
 ## Introduction
 
 AuCiGen (Automated City Generation) is a global project which is composed of 5 subproject. The topic of our part was "Procedural Generation of Parcels in Urban Modelling". During 4 weeks, we implemented 2 algorithms modelising realistic partitioning in parcels :
